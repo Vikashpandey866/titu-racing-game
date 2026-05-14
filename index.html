@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titu Turbo Racing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu">
+  <h1>Titu Turbo Racing</h1>
+
+  <div class="menu-box">
+
+    <label>Select Car</label>
+    <select id="carSelect">
+      <option value="red">Red Racer</option>
+      <option value="blue">Blue Drift</option>
+      <option value="lime">Lime Turbo</option>
+    </select>
+
+    <label>Select Weather</label>
+    <select id="weatherSelect">
+      <option value="sunny">Sunny</option>
+      <option value="rain">Rain</option>
+      <option value="night">Night</option>
+    </select>
+
+    <button onclick="startGame()">START RACE</button>
+
+  </div>
+</div>
+
+<div id="hud">
+  <span id="score">Score: 0</span>
+  <span id="speed">Speed: 0</span>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
