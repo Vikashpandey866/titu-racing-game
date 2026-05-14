@@ -240,7 +240,7 @@ playerCar.scale.set(
 
 playerCar.position.y = 1;
 
-playerCar.position.z = 12;
+playerCar.position.z = 20;
 
 scene.add(playerCar);
 
@@ -308,7 +308,7 @@ function createTrafficCar(zPos){
 
   car.position.set(
 
-    Math.random() * 10 - 5,
+    Math.random() * 14 - 7,
 
     1,
 
@@ -532,7 +532,7 @@ function moveTraffic(){
       car.position.z = -200;
 
       car.position.x =
-      Math.random() * 10 - 5;
+      Math.random() * 14 - 7;
 
       score += 10;
 
@@ -556,7 +556,7 @@ function moveTraffic(){
         playerCar.position.z -
         car.position.z
 
-      ) < 3
+      ) < 2
 
     ){
 
