@@ -1,44 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Titu Turbo Racing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Titu Ultra 3D Racing</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
 </head>
+
 <body>
 
-<div id="menu">
-  <h1>Titu Turbo Racing</h1>
+  <!-- ========================= -->
+  <!-- GARAGE MENU -->
+  <!-- ========================= -->
 
-  <div class="menu-box">
+  <div id="garageMenu">
 
-    <label>Select Car</label>
-    <select id="carSelect">
-      <option value="red">Red Racer</option>
-      <option value="blue">Blue Drift</option>
-      <option value="lime">Lime Turbo</option>
-    </select>
+    <h1>Titu Ultra Racing</h1>
 
-    <label>Select Weather</label>
-    <select id="weatherSelect">
-      <option value="sunny">Sunny</option>
-      <option value="rain">Rain</option>
-      <option value="night">Night</option>
-    </select>
+    <div class="garageBox">
 
-    <button onclick="startGame()">START RACE</button>
+      <h2>Select Your Car</h2>
+
+      <div class="carButtons">
+
+        <button onclick="selectCar('red')">
+          🔴 Red Racer
+        </button>
+
+        <button onclick="selectCar('blue')">
+          🔵 Blue Drift
+        </button>
+
+        <button onclick="selectCar('green')">
+          🟢 Green Turbo
+        </button>
+
+      </div>
+
+      <h2>Select Weather</h2>
+
+      <select id="weatherSelect">
+        <option value="sunny">☀ Sunny</option>
+        <option value="night">🌙 Night</option>
+        <option value="rain">🌧 Rain</option>
+      </select>
+
+      <h2>Select Game Mode</h2>
+
+      <select id="gameMode">
+        <option value="traffic">🚗 Traffic Mode</option>
+        <option value="time">⏱ Time Trial</option>
+        <option value="free">🌆 Free Ride</option>
+      </select>
+
+      <button id="startBtn" onclick="startGame()">
+        START GAME
+      </button>
+
+    </div>
 
   </div>
-</div>
 
-<div id="hud">
-  <span id="score">Score: 0</span>
-  <span id="speed">Speed: 0</span>
-</div>
+  <!-- ========================= -->
+  <!-- HUD -->
+  <!-- ========================= -->
 
-<canvas id="gameCanvas"></canvas>
+  <div id="hud">
 
-<script src="script.js"></script>
+    <div class="hudItem">
+      Score:
+      <span id="score">0</span>
+    </div>
+
+    <div class="hudItem">
+      Speed:
+      <span id="speed">0</span>
+    </div>
+
+    <div class="hudItem">
+      Nitro:
+      <span id="nitroStatus">OFF</span>
+    </div>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- MOBILE CONTROLS -->
+  <!-- ========================= -->
+
+  <div id="mobileControls">
+
+    <button
+      ontouchstart="moveLeft=true"
+      ontouchend="moveLeft=false"
+    >
+      ⬅
+    </button>
+
+    <button
+      ontouchstart="nitro=true"
+      ontouchend="nitro=false"
+    >
+      ⚡
+    </button>
+
+    <button
+      ontouchstart="moveRight=true"
+      ontouchend="moveRight=false"
+    >
+      ➡
+    </button>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- LOADING SCREEN -->
+  <!-- ========================= -->
+
+  <div id="loadingScreen">
+
+    <h1>Loading 3D World...</h1>
+
+    <div class="loader"></div>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- AUDIO -->
+  <!-- ========================= -->
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music/racing.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Nitro Sound -->
+  <audio id="nitroSound">
+    <source src="assets/sounds/nitro.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Crash Sound -->
+  <audio id="crashSound">
+    <source src="assets/sounds/crash.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- ========================= -->
+  <!-- GAME SCRIPT -->
+  <!-- ========================= -->
+
+  <script src="script.js"></script>
+
 </body>
 </html>
