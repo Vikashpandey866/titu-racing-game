@@ -75,6 +75,9 @@ let weather = "sunny";
 
 let gameMode = "traffic";
 
+/* GAME START FIX */
+let gameStarted = false;
+
 /* ========================= */
 /* AUDIO */
 /* ========================= */
@@ -325,7 +328,7 @@ function createTrafficCar(zPos){
 for(let i=0; i<8; i++){
 
   createTrafficCar(
-    -i * 25
+    -100 - (i * 30)
   );
 
 }
@@ -386,6 +389,8 @@ function selectCar(color){
 /* ========================= */
 
 function startGame(){
+
+  gameStarted = true;
 
   document
     .getElementById(
@@ -547,7 +552,7 @@ function moveTraffic(){
         playerCar.position.x -
         car.position.x
 
-      ) < 1.8
+      ) < 1.5
 
       &&
 
@@ -556,7 +561,7 @@ function moveTraffic(){
         playerCar.position.z -
         car.position.z
 
-      ) < 2
+      ) < 1.5
 
     ){
 
@@ -617,13 +622,17 @@ function animate(){
     animate
   );
 
-  movePlayer();
+  if(gameStarted){
 
-  moveRoad();
+    movePlayer();
 
-  moveTraffic();
+    moveRoad();
 
-  updateHUD();
+    moveTraffic();
+
+    updateHUD();
+
+  }
 
   renderer.render(
     scene,
