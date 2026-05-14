@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
 
   <title>Titu Ultra 3D Racing</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="red-car.png">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Three.js -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+
 </head>
 
 <body>
+
+  <!-- ========================= -->
+  <!-- LOADING SCREEN -->
+  <!-- ========================= -->
+
+  <div id="loadingScreen">
+
+    <h1>Loading 3D World...</h1>
+
+    <div class="loader"></div>
+
+  </div>
 
   <!-- ========================= -->
   <!-- GARAGE MENU -->
@@ -46,17 +68,37 @@
       <h2>Select Weather</h2>
 
       <select id="weatherSelect">
-        <option value="sunny">☀ Sunny</option>
-        <option value="night">🌙 Night</option>
-        <option value="rain">🌧 Rain</option>
+
+        <option value="sunny">
+          ☀ Sunny
+        </option>
+
+        <option value="night">
+          🌙 Night
+        </option>
+
+        <option value="rain">
+          🌧 Rain
+        </option>
+
       </select>
 
       <h2>Select Game Mode</h2>
 
       <select id="gameMode">
-        <option value="traffic">🚗 Traffic Mode</option>
-        <option value="time">⏱ Time Trial</option>
-        <option value="free">🌆 Free Ride</option>
+
+        <option value="traffic">
+          🚗 Traffic Mode
+        </option>
+
+        <option value="time">
+          ⏱ Time Trial
+        </option>
+
+        <option value="free">
+          🌆 Free Ride
+        </option>
+
       </select>
 
       <button id="startBtn" onclick="startGame()">
@@ -80,7 +122,7 @@
 
     <div class="hudItem">
       Speed:
-      <span id="speed">0</span>
+      <span id="speed">NORMAL</span>
     </div>
 
     <div class="hudItem">
@@ -120,34 +162,37 @@
   </div>
 
   <!-- ========================= -->
-  <!-- LOADING SCREEN -->
-  <!-- ========================= -->
-
-  <div id="loadingScreen">
-
-    <h1>Loading 3D World...</h1>
-
-    <div class="loader"></div>
-
-  </div>
-
-  <!-- ========================= -->
   <!-- AUDIO -->
   <!-- ========================= -->
 
   <!-- Background Music -->
   <audio id="bgMusic" loop>
-    <source src="assets/music/racing.mp3" type="audio/mp3">
+
+    <source
+      src="assets/music/racing.mp3"
+      type="audio/mp3"
+    >
+
   </audio>
 
   <!-- Nitro Sound -->
   <audio id="nitroSound">
-    <source src="assets/sounds/nitro.mp3" type="audio/mp3">
+
+    <source
+      src="assets/sounds/nitro.mp3"
+      type="audio/mp3"
+    >
+
   </audio>
 
   <!-- Crash Sound -->
   <audio id="crashSound">
-    <source src="assets/sounds/crash.mp3" type="audio/mp3">
+
+    <source
+      src="assets/sounds/crash.mp3"
+      type="audio/mp3"
+    >
+
   </audio>
 
   <!-- ========================= -->
